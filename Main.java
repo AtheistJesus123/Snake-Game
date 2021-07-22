@@ -116,6 +116,18 @@ public class Main extends Application {
 			gameEnd.setLayoutX(90);
 			gameEnd.setLayoutY(150);
 			root2.getChildren().addAll(endGame, gameEnd, playAgain);
+			new AnimationTimer() {
+
+				@Override
+				public void handle(long arg0) {
+					if (snake.getTranslateX() % 20 == 0 && snake.getTranslateY() % 20 == 0)
+					{
+						System.out.println("Hi");
+						System.out.println(snake.getTranslateX());
+					}
+				}
+				
+			}.start();
 			String test2 = "Hi";
 			primaryStage.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>()
 					{
